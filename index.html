@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Majestic Auto FL | High-Performance Luxury &amp; Exotics</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --carbon: #0a0a0a;
+    --carbon-light: #121212;
+    --accent: #E10600;
+    --stripe: #FFCC00;
+    --metal: #c0c0c0;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #050505;
+    color: #f5f5f5;
+    overflow-x: hidden;
+  }
+
+  .heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
+
+  .racing-font {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    letter-spacing: 2px;
+  }
+
+  /* Carbon Fiber Texture */
+  .carbon-fiber {
+    background-color: #0d0d0d;
+    background-image:
+      linear-gradient(27deg, #111 5px, transparent 5px),
+      linear-gradient(207deg, #111 5px, transparent 5px),
+      linear-gradient(27deg, #1a1a1a 5px, transparent 5px),
+      linear-gradient(207deg, #1a1a1a 5px, transparent 5px),
+      linear-gradient(90deg, #151515 10px, transparent 10px),
+      linear-gradient(#161616 25%, #121212 25%, #121212 50%, transparent 50%, transparent 75%, #1c1c1c 75%, #1c1c1c);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 0, 0 10px, 10px 5px, 0 0, 0 0;
+  }
+
+  .carbon-fiber-strong {
+    background-color: #080808;
+    background-image:
+      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px),
+      repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+      linear-gradient(to bottom, #0a0a0a, #111);
+  }
+
+  /* Performance Stripe Accents */
+  .performance-stripe {
+    position: relative;
+  }
+  .performance-stripe::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--stripe), var(--accent));
+  }
+
+  .dual-stripe {
+    position: relative;
+  }
+  .dual-stripe::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 40%, transparent 40%, transparent 50%, var(--stripe) 50%, var(--stripe) 90%, transparent 90%);
+  }
+
+  /* Carbon Fiber Buttons */
+  .carbon-btn {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+    border: 1px solid #333;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.08),
+      0 4px 15px rgba(0,0,0,0.5);
+  }
+  .carbon-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(27deg, transparent 40%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.03) 60%, transparent 60%),
+      linear-gradient(207deg, transparent 40%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.2) 60%, transparent 60%);
+    background-size: 8px 8px;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  .carbon-btn:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.12),
+      0 8px 25px rgba(225,6,0,0.25),
+      0 0 20px rgba(225,6,0,0.15);
+    color: white;
+  }
+  .carbon-btn:active {
+    transform: translateY(-1px);
+  }
+  .carbon-btn-primary {
+    background: linear-gradient(145deg, #c00500, #8a0400);
+    border: 1px solid #E10600;
+  }
+  .carbon-btn-primary:hover {
+    background: linear-gradient(145deg, #E10600, #a00500);
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.2),
+      0 8px 30px rgba(225,6,0,0.4),
+      0 0 30px rgba(225,6,0,0.3);
+  }
+
+  /* Luxury Card */
+  .car-card {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    background: #0c0c0c;
+    border: 1px solid #1f1f1f;
+    flex: 0 0 auto;
+    width: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+  .car-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .car-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #333;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(225,6,0,0.1);
+  }
+  .car-card:hover::before {
+    opacity: 1;
+  }
+
+  .horizontal-scroll {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .horizontal-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Racing Logo */
+  .racing-logo {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    transform: skewX(-8deg);
+    display: inline-block;
+    color: #fff;
+    text-shadow:
+      0 0 30px rgba(225,6,0,0.4),
+      3px 3px 0 rgba(225,6,0,0.6);
+  }
+
+  /* Diagonal Performance Stripes Overlay */
+  .stripe-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 5;
+  }
+  .stripe-overlay::before,
+  .stripe-overlay::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    width: 80px;
+    height: 200%;
+    background: linear-gradient(to bottom, transparent, rgba(225,6,0,0.08), transparent);
+    transform: rotate(25deg);
+  }
+  .stripe-overlay::before {
+    left: 8%;
+  }
+  .stripe-overlay::after {
+    right: 12%;
+    background: linear-gradient(to bottom, transparent, rgba(255,204,0,0.06), transparent);
+    transform: rotate(-18deg);
+  }
+
+  /* Section Title with Stripe */
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+  }
+
+  /* Specs highlight */
+  .spec-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: 1px;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Glow accents */
+  .red-glow {
+    box-shadow: 0 0 40px rgba(225,6,0,0.15);
+  }
+
+  /* Nav carbon */
+  .nav-carbon {
+    background: rgba(5,5,5,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-carbon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
+    opacity: 0.6;
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 nav-carbon">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between h-18 md:h-20">
+    <a href="#" class="flex items-center gap-3 group">
+      <img src="logo.jpg" alt="Majestic Auto FL" class="h-10 md:h-12 w-auto object-contain transition group-hover:scale-105">
+    </a>
+
+    <div class="hidden lg:flex items-center gap-x-10 text-sm font-medium tracking-wide">
+      <a href="#collection" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">COLLECTION</a>
+      <a href="#experience" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">EXPERIENCE</a>
+      <a href="#ai" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">AI MATCH</a>
+      <a href="#contact" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">CONTACT</a>
+    </div>
+
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+            class="carbon-btn carbon-btn-primary px-6 py-2.5 text-xs rounded-sm">
+      PRIVATE VIEWING
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="relative h-[100dvh] min-h-[700px] flex items-end justify-center overflow-hidden">
+  <video id="hero-video"
+         class="absolute inset-0 w-full h-full object-cover"
+         autoplay muted loop playsinline
+         poster="assets/poster.jpg">
+    <source src="hero-optimized.mp4" type="video/mp4">
+  </video>
+
+  <!-- Cinematic overlays -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/15"></div>
+  <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20"></div>
+
+  <!-- Performance Stripe Overlay -->
+  <div class="stripe-overlay"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-12 pb-16 md:pb-24 pt-28">
+    <div class="max-w-3xl">
+      <!-- Small label with dual stripe -->
+      <div class="inline-flex items-center gap-3 mb-6">
+        <div class="h-[2px] w-10 bg-[#E10600]"></div>
+        <span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">High-Performance Luxury</span>
+      </div>
+
+      <h1 class="racing-logo text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-2 leading-none">
+        Buy Today
+      </h1>
+      <div class="flex items-baseline gap-4 mb-8">
+        <span class="heading text-3xl md:text-4xl text-white/90">Drive Today</span>
+        <div class="h-px flex-1 max-w-[120px] bg-gradient-to-r from-[#E10600] to-transparent"></div>
+      </div>
+
+      <p class="text-lg md:text-xl text-white/80 max-w-lg mb-10 leading-relaxed font-light">
+        Curated exotics. Forged for those who demand absolute performance and exclusivity.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})"
+                class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm">
+          EXPLORE COLLECTION
+        </button>
+        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                class="carbon-btn px-10 py-4 text-sm rounded-sm border border-white/20">
+          REQUEST PRIVATE ACCESS
+        </button>
+      </div>
+    </div>
+
+    <!-- Floating performance specs -->
+    <div class="hidden md:flex absolute bottom-16 right-12 gap-10">
+      <div class="text-right">
+        <div class="spec-number">710+</div>
+        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Horsepower</div>
+      </div>
+      <div class="text-right">
+        <div class="spec-number">2.8s</div>
+        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">0-60 MPH</div>
+      </div>
+      <div class="text-right">
+        <div class="spec-number">212</div>
+        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Top Speed</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- CURATED COLLECTION -->
+<section id="collection" class="relative py-24 md:py-32 overflow-hidden">
+  <!-- Subtle carbon side panels -->
+  <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#E10600] to-transparent opacity-40"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#FFCC00] to-transparent opacity-30"></div>
+
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-8 h-[2px] bg-[#E10600]"></div>
+          <span class="text-[#E10600] text-xs tracking-[4px] font-semibold uppercase">The Collection</span>
+        </div>
+        <h2 class="section-title heading">Featured Inventory</h2>
+        <p class="text-white/50 mt-3 max-w-md">Hand-selected high-performance machines. Each vehicle inspected, authenticated, and prepared to the highest standard.</p>
+      </div>
+      <a href="#" class="carbon-btn px-6 py-3 text-xs rounded-sm self-start md:self-auto">
+        VIEW FULL INVENTORY →
+      </a>
+    </div>
+
+    <!-- Horizontal Scroll Cards -->
+    <div class="horizontal-scroll flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-2 px-2">
+
+      <!-- Card 1 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/mclaren-black.jpg" alt="McLaren 720S Spider" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">Performance • 710 hp</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">McLaren 720S Spider</h3>
+              <div class="text-sm text-white/50 mt-1">Carbon Fiber Exterior • Track Pack</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$289,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('McLaren 720S Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/mclaren-white.jpg" alt="McLaren 750S" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
+            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">Track Pack • 740 hp</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">McLaren 750S Coupe</h3>
+              <div class="text-sm text-white/50 mt-1">Lightweight • Full Carbon</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$312,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('McLaren 750S Coupe')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/g-wagon.jpg" alt="Mercedes-AMG G 63" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">Mansory • Full Carbon</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">Mercedes-AMG G 63</h3>
+              <div class="text-sm text-white/50 mt-1">Mansory Edition • 850+ hp</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$265,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('Mercedes-AMG G 63')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/mclaren-detail.jpg" alt="McLaren Artura" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2025</span>
+            <span class="bg-[#FFCC00]/90 text-black text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">NEW ARRIVAL</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">Hybrid • 671 hp</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">McLaren Artura Spider</h3>
+              <div class="text-sm text-white/50 mt-1">Plug-in Hybrid • Carbon Tub</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$245,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('McLaren Artura Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/mclaren-black.jpg" alt="Ferrari 296 GTB" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
+            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">V6 Hybrid • 819 hp</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">Ferrari 296 GTB</h3>
+              <div class="text-sm text-white/50 mt-1">Assetto Fiorano Package</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$329,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('Ferrari 296 GTB')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="car-card rounded-sm snap-start group">
+        <div class="relative overflow-hidden">
+          <img src="assets/mclaren-white.jpg" alt="Lamborghini Huracán STO" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+          <div class="absolute top-4 left-4 flex gap-2">
+            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <div class="text-xs text-white/60 tracking-wider uppercase">V10 • 631 hp</div>
+          </div>
+        </div>
+        <div class="p-6 carbon-fiber-strong">
+          <div class="flex justify-between items-start mb-5">
+            <div>
+              <h3 class="font-semibold text-xl tracking-tight">Lamborghini Huracán STO</h3>
+              <div class="text-sm text-white/50 mt-1">Super Trofeo Omologata</div>
+            </div>
+            <div class="text-right">
+              <div class="text-[#E10600] font-bold text-lg">$298,000</div>
+            </div>
+          </div>
+          <button onclick="showInquiryModal('Lamborghini Huracán STO')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
+            INQUIRE NOW
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / PHILOSOPHY -->
+<section id="experience" class="relative py-28 border-t border-white/5">
+  <div class="absolute inset-0 carbon-fiber opacity-40"></div>
+  <div class="relative max-w-screen-2xl mx-auto px-6 md:px-12">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-[2px] bg-[#FFCC00]"></div>
+          <span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">The Majestic Standard</span>
+        </div>
+        <h2 class="section-title heading mb-8">Performance Without Compromise</h2>
+        <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-lg">
+          We don’t simply sell automobiles. We curate the rarest high-performance machines and deliver an ownership experience engineered for the most discerning clients.
+        </p>
+        <div class="grid grid-cols-2 gap-8">
+          <div>
+            <div class="spec-number text-4xl">30+</div>
+            <div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Years Expertise</div>
+          </div>
+          <div>
+            <div class="spec-number text-4xl">100%</div>
+            <div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Private Client Focus</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 flex items-center justify-center border border-[#E10600]/40 text-[#E10600]">
+              <i class="fa-solid fa-shield-halved text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Authenticated Provenance</h3>
+              <p class="text-white/50 text-sm leading-relaxed">Every vehicle undergoes multi-point inspection, service history verification, and carbon fiber integrity checks.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 flex items-center justify-center border border-[#FFCC00]/40 text-[#FFCC00]">
+              <i class="fa-solid fa-key text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">White-Glove Delivery</h3>
+              <p class="text-white/50 text-sm leading-relaxed">Enclosed transport, private unveiling, and personal onboarding with our performance specialists.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+          <div class="flex items-start gap-5">
+            <div class="w-12 h-12 flex items-center justify-center border border-white/20 text-white/70">
+              <i class="fa-solid fa-gauge-high text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Track &amp; Service Network</h3>
+              <p class="text-white/50 text-sm leading-relaxed">Preferred access to elite service centers and private track day invitations for owners.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI MATCHING -->
+<section id="ai" class="relative py-28">
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+    <div class="relative carbon-fiber-strong border border-white/10 rounded-sm overflow-hidden">
+      <!-- Side accent stripe -->
+      <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
+
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="p-10 md:p-16 flex flex-col justify-center">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-sm bg-[#E10600]/10 border border-[#E10600]/30 flex items-center justify-center">
+              <i class="fa-solid fa-microchip text-[#E10600]"></i>
+            </div>
+            <span class="text-[#E10600] text-xs tracking-[3px] font-semibold uppercase">Proprietary Technology</span>
+          </div>
+          <h2 class="section-title heading mb-6">AI Performance Matching</h2>
+          <p class="text-white/60 text-lg mb-10 max-w-md leading-relaxed">
+            Describe your ideal drive. Our AI instantly scans the collection and private network for the perfect machine based on power delivery, rarity, and lifestyle.
+          </p>
+          <button onclick="showAIMatchingModal()" class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm w-fit">
+            START AI MATCHING
+          </button>
+        </div>
+
+        <div class="relative min-h-[320px] md:min-h-full bg-black/50 flex items-center justify-center p-10">
+          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 30% 40%, #E10600 0%, transparent 50%), radial-gradient(circle at 70% 60%, #FFCC00 0%, transparent 40%);"></div>
+          <div class="relative text-center">
+            <div class="text-6xl md:text-8xl racing-font text-white/10 mb-4">AI</div>
+            <div class="text-sm tracking-[3px] text-white/40 uppercase">Precision Matching Engine</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact" class="relative py-28 border-t border-white/5">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="flex justify-center mb-8">
+      <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#E10600] to-transparent"></div>
+    </div>
+    <h2 class="section-title heading mb-6">Ready for Your Next Legend?</h2>
+    <p class="text-white/60 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+      Whether you seek a specific hypercar or wish to explore exclusive private opportunities, our team provides white-glove, confidential service.
+    </p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+      <button onclick="showInquiryModal()" class="carbon-btn carbon-btn-primary px-12 py-5 text-sm rounded-sm">
+        START PRIVATE CONVERSATION
+      </button>
+      <a href="tel:+1234567890" class="carbon-btn px-10 py-5 text-sm rounded-sm flex items-center gap-3">
+        <i class="fa-solid fa-phone text-[#E10600]"></i>
+        SPEAK WITH A SPECIALIST
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative border-t border-white/5 pt-16 pb-10">
+  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E10600]/50 to-transparent"></div>
+  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+    <div class="grid md:grid-cols-4 gap-12 mb-16">
+      <div class="md:col-span-1">
+        <div class="heading text-2xl mb-3">MAJESTIC</div>
+        <div class="text-[10px] tracking-[3px] text-[#E10600] font-semibold mb-6">AUTO FL · PERFORMANCE</div>
+        <p class="text-white/40 text-sm leading-relaxed">Florida’s premier destination for high-performance and exotic automobiles.</p>
+      </div>
+      <div>
+        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Inventory</div>
+        <div class="space-y-3 text-sm">
+          <a href="#" class="block hover:text-[#E10600] transition">New Arrivals</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Pre-Owned Exotics</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Just Sold</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Coming Soon</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Services</div>
+        <div class="space-y-3 text-sm">
+          <a href="#" class="block hover:text-[#E10600] transition">Private Sales</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Consignment</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Finance &amp; Insurance</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Performance Service</a>
+        </div>
+      </div>
+      <div>
+        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Connect</div>
+        <div class="space-y-3 text-sm">
+          <a href="#" class="block hover:text-[#E10600] transition">Instagram</a>
+          <a href="#" class="block hover:text-[#E10600] transition">YouTube</a>
+          <a href="#" class="block hover:text-[#E10600] transition">About Us</a>
+          <a href="#" class="block hover:text-[#E10600] transition">Careers</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-8 border-t border-white/5 text-sm text-white/40">
+      <div>© 2026 Majestic Auto FL. All rights reserved. Performance forged in Florida.</div>
+      <div class="flex gap-8">
+        <a href="#" class="hover:text-white transition">Privacy</a>
+        <a href="#" class="hover:text-white transition">Terms</a>
+        <a href="#" class="hover:text-white transition">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- AI MATCHING MODAL -->
+<div id="ai-modal" onclick="if(event.target.id==='ai-modal') hideAIMatchingModal()"
+     class="hidden fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-4 md:p-6">
+  <div onclick="event.stopPropagation()" class="carbon-fiber-strong border border-white/10 rounded-sm w-full max-w-2xl overflow-hidden">
+    <div class="h-1 bg-gradient-to-r from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
+    <div class="p-8 md:p-10">
+      <div class="flex justify-between items-start mb-8">
+        <div>
+          <h3 class="text-2xl font-semibold tracking-tight">AI Performance Matching</h3>
+          <p class="text-white/50 text-sm mt-1">Tell us what you demand from your next machine</p>
+        </div>
+        <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
+      </div>
+
+      <form onsubmit="runAIMatching(event)">
+        <div class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Budget Range</label>
+              <select class="w-full bg-black/60 border border-white/15 rounded-sm px-4 py-3.5 text-sm focus:border-[#E10600] outline-none transition">
+                <option>Under $200,000</option>
+                <option selected>$200,000 – $300,000</option>
+                <option>$300,000 – $500,000</option>
+                <option>$500,000 – $1M</option>
+                <option>Over $1,000,000</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Preferred Style</label>
+              <select class="w-full bg-black/60 border border-white/15 rounded-sm px-4 py-3.5 text-sm focus:border-[#E10600] outline-none transition">
+                <option>Hypercar / Supercar</option>
+                <option>Track Weapon</option>
+                <option>Luxury Performance SUV</option>
+                <option>Open-Top Grand Tourer</option>
+                <option>Daily Supercar</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Key Priorities</label>
+            <div class="flex flex-wrap gap-2">
+              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Max Power</label>
+              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Rarity</label>
+              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Carbon Fiber</label>
+              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Sound</label>
+            </div>
+          </div>
+          <button type="submit" class="carbon-btn carbon-btn-primary w-full py-4 text-sm rounded-sm mt-4">
+            FIND MY PERFECT MACHINE
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    const hero = document.getElementById('hero-video');
+    if (hero) {
+      hero.play().catch(() => {});
+    }
+  };
+
+  function showAIMatchingModal() {
+    document.getElementById('ai-modal').classList.remove('hidden');
+    document.getElementById('ai-modal').classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function hideAIMatchingModal() {
+    document.getElementById('ai-modal').classList.add('hidden');
+    document.getElementById('ai-modal').classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function runAIMatching(e) {
+    e.preventDefault();
+    const modal = document.getElementById('ai-modal');
+    modal.innerHTML = `
+      <div class="carbon-fiber-strong border border-white/10 rounded-sm w-full max-w-2xl overflow-hidden">
+        <div class="h-1 bg-gradient-to-r from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
+        <div class="p-12 text-center">
+          <div class="text-[#E10600] text-5xl mb-6"><i class="fa-solid fa-check-circle"></i></div>
+          <h3 class="text-2xl font-semibold mb-3">Matches Found</h3>
+          <p class="text-white/60 mb-8 max-w-sm mx-auto">Our AI has identified three exceptional machines that align with your criteria. A specialist will contact you within the hour with private details.</p>
+          <button onclick="location.reload()" class="carbon-btn carbon-btn-primary px-10 py-3.5 text-sm rounded-sm">
+            CLOSE
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function showInquiryModal(car = '') {
+    const message = car ? `Private inquiry initiated for: ${car}. A specialist will reach out shortly.` : 'Private conversation started. Our team will contact you immediately.';
+    alert(message);
+  }
+</script>
+</body>
+</html>
