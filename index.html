@@ -8,251 +8,223 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --carbon: #0a0a0a;
-    --carbon-light: #121212;
-    --accent: #E10600;
-    --stripe: #FFCC00;
-    --metal: #c0c0c0;
+:root {
+--carbon: #0a0a0a;
+--carbon-light: #121212;
+--accent: #E10600;
+--stripe: #FFCC00;
+--metal: #c0c0c0;
   }
-
-  body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: #050505;
-    color: #f5f5f5;
-    overflow-x: hidden;
+body {
+font-family: 'Inter', system-ui, sans-serif;
+background-color: #050505;
+color: #f5f5f5;
+overflow-x: hidden;
   }
-
-  .heading {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 800;
-    letter-spacing: -1.5px;
+.heading {
+font-family: 'Playfair Display', Georgia, serif;
+font-weight: 800;
+letter-spacing: -1.5px;
   }
-
-  .racing-font {
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    letter-spacing: 2px;
+.racing-font {
+font-family: 'Bebas Neue', Impact, sans-serif;
+letter-spacing: 2px;
   }
-
-  /* Carbon Fiber Texture */
-  .carbon-fiber {
-    background-color: #0d0d0d;
-    background-image:
-      linear-gradient(27deg, #111 5px, transparent 5px),
-      linear-gradient(207deg, #111 5px, transparent 5px),
-      linear-gradient(27deg, #1a1a1a 5px, transparent 5px),
-      linear-gradient(207deg, #1a1a1a 5px, transparent 5px),
-      linear-gradient(90deg, #151515 10px, transparent 10px),
-      linear-gradient(#161616 25%, #121212 25%, #121212 50%, transparent 50%, transparent 75%, #1c1c1c 75%, #1c1c1c);
-    background-size: 20px 20px;
-    background-position: 0 0, 10px 0, 0 10px, 10px 5px, 0 0, 0 0;
+.carbon-fiber {
+background-color: #0d0d0d;
+background-image:
+linear-gradient(27deg, #111 5px, transparent 5px),
+linear-gradient(207deg, #111 5px, transparent 5px),
+linear-gradient(27deg, #1a1a1a 5px, transparent 5px),
+linear-gradient(207deg, #1a1a1a 5px, transparent 5px),
+linear-gradient(90deg, #151515 10px, transparent 10px),
+linear-gradient(#161616 25%, #121212 25%, #121212 50%, transparent 50%, transparent 75%, #1c1c1c 75%, #1c1c1c);
+background-size: 20px 20px;
+background-position: 0 0, 10px 0, 0 10px, 10px 5px, 0 0, 0 0;
   }
-
-  .carbon-fiber-strong {
-    background-color: #080808;
-    background-image:
-      repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px),
-      repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
-      linear-gradient(to bottom, #0a0a0a, #111);
+.carbon-fiber-strong {
+background-color: #080808;
+background-image:
+repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(0,0,0,0.4) 2px, rgba(0,0,0,0.4) 4px),
+repeating-linear-gradient(-45deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+linear-gradient(to bottom, #0a0a0a, #111);
   }
-
-  /* Performance Stripe Accents */
-  .performance-stripe {
-    position: relative;
+.performance-stripe {
+position: relative;
   }
-  .performance-stripe::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(to bottom, var(--accent), var(--stripe), var(--accent));
+.performance-stripe::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 4px;
+height: 100%;
+background: linear-gradient(to bottom, var(--accent), var(--stripe), var(--accent));
   }
-
-  .dual-stripe {
-    position: relative;
+.dual-stripe {
+position: relative;
   }
-  .dual-stripe::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 0;
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 40%, transparent 40%, transparent 50%, var(--stripe) 50%, var(--stripe) 90%, transparent 90%);
+.dual-stripe::after {
+content: '';
+position: absolute;
+bottom: -8px;
+left: 0;
+width: 120px;
+height: 4px;
+background: linear-gradient(90deg, var(--accent) 0%, var(--accent) 40%, transparent 40%, transparent 50%, var(--stripe) 50%, var(--stripe) 90%, transparent 90%);
   }
-
-  /* Carbon Fiber Buttons */
-  .carbon-btn {
-    position: relative;
-    background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
-    border: 1px solid #333;
-    color: white;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    overflow: hidden;
-    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.08),
-      0 4px 15px rgba(0,0,0,0.5);
+.carbon-btn {
+position: relative;
+background: linear-gradient(145deg, #1a1a1a, #0a0a0a);
+border: 1px solid #333;
+color: white;
+font-weight: 600;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+overflow: hidden;
+transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.08),
+0 4px 15px rgba(0,0,0,0.5);
   }
-  .carbon-btn::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(27deg, transparent 40%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.03) 60%, transparent 60%),
-      linear-gradient(207deg, transparent 40%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.2) 60%, transparent 60%);
-    background-size: 8px 8px;
-    opacity: 0.7;
-    pointer-events: none;
+.carbon-btn::before {
+content: '';
+position: absolute;
+inset: 0;
+background:
+linear-gradient(27deg, transparent 40%, rgba(255,255,255,0.03) 40%, rgba(255,255,255,0.03) 60%, transparent 60%),
+linear-gradient(207deg, transparent 40%, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.2) 60%, transparent 60%);
+background-size: 8px 8px;
+opacity: 0.7;
+pointer-events: none;
   }
-  .carbon-btn:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.12),
-      0 8px 25px rgba(225,6,0,0.25),
-      0 0 20px rgba(225,6,0,0.15);
-    color: white;
+.carbon-btn:hover {
+border-color: var(--accent);
+transform: translateY(-3px);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.12),
+0 8px 25px rgba(225,6,0,0.25),
+0 0 20px rgba(225,6,0,0.15);
+color: white;
   }
-  .carbon-btn:active {
-    transform: translateY(-1px);
+.carbon-btn:active {
+transform: translateY(-1px);
   }
-  .carbon-btn-primary {
-    background: linear-gradient(145deg, #c00500, #8a0400);
-    border: 1px solid #E10600;
+.carbon-btn-primary {
+background: linear-gradient(145deg, #c00500, #8a0400);
+border: 1px solid #E10600;
   }
-  .carbon-btn-primary:hover {
-    background: linear-gradient(145deg, #E10600, #a00500);
-    box-shadow:
-      inset 0 1px 0 rgba(255,255,255,0.2),
-      0 8px 30px rgba(225,6,0,0.4),
-      0 0 30px rgba(225,6,0,0.3);
+.carbon-btn-primary:hover {
+background: linear-gradient(145deg, #E10600, #a00500);
+box-shadow:
+inset 0 1px 0 rgba(255,255,255,0.2),
+0 8px 30px rgba(225,6,0,0.4),
+0 0 30px rgba(225,6,0,0.3);
   }
-
-  /* Luxury Card */
-  .car-card {
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-    background: #0c0c0c;
-    border: 1px solid #1f1f1f;
-    flex: 0 0 auto;
-    width: 320px;
-    position: relative;
-    overflow: hidden;
+.car-card {
+transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+background: #0c0c0c;
+border: 1px solid #1f1f1f;
+flex: 0 0 auto;
+width: 320px;
+position: relative;
+overflow: hidden;
   }
-  .car-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
-    opacity: 0;
-    transition: opacity 0.4s;
+.car-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
+opacity: 0;
+transition: opacity 0.4s;
   }
-  .car-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #333;
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(225,6,0,0.1);
+.car-card:hover {
+transform: translateY(-10px) scale(1.02);
+border-color: #333;
+box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8), 0 0 40px rgba(225,6,0,0.1);
   }
-  .car-card:hover::before {
-    opacity: 1;
+.car-card:hover::before {
+opacity: 1;
   }
-
-  .horizontal-scroll {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+.horizontal-scroll {
+scrollbar-width: none;
+-ms-overflow-style: none;
   }
-  .horizontal-scroll::-webkit-scrollbar {
-    display: none;
+.horizontal-scroll::-webkit-scrollbar {
+display: none;
   }
-
-  /* Racing Logo */
-  .racing-logo {
-    font-family: 'Bebas Neue', Impact, sans-serif;
-    font-weight: 400;
-    letter-spacing: 4px;
-    transform: skewX(-8deg);
-    display: inline-block;
-    color: #fff;
-    text-shadow:
-      0 0 30px rgba(225,6,0,0.4),
-      3px 3px 0 rgba(225,6,0,0.6);
+.racing-logo {
+font-family: 'Bebas Neue', Impact, sans-serif;
+font-weight: 400;
+letter-spacing: 4px;
+transform: skewX(-8deg);
+display: inline-block;
+color: #fff;
+text-shadow:
+0 0 30px rgba(225,6,0,0.4),
+3px 3px 0 rgba(225,6,0,0.6);
   }
-
-  /* Diagonal Performance Stripes Overlay */
-  .stripe-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: 5;
+.stripe-overlay {
+position: absolute;
+inset: 0;
+pointer-events: none;
+overflow: hidden;
+z-index: 5;
   }
-  .stripe-overlay::before,
-  .stripe-overlay::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    width: 80px;
-    height: 200%;
-    background: linear-gradient(to bottom, transparent, rgba(225,6,0,0.08), transparent);
-    transform: rotate(25deg);
+.stripe-overlay::before,
+.stripe-overlay::after {
+content: '';
+position: absolute;
+top: -50%;
+width: 80px;
+height: 200%;
+background: linear-gradient(to bottom, transparent, rgba(225,6,0,0.08), transparent);
+transform: rotate(25deg);
   }
-  .stripe-overlay::before {
-    left: 8%;
+.stripe-overlay::before {
+left: 8%;
   }
-  .stripe-overlay::after {
-    right: 12%;
-    background: linear-gradient(to bottom, transparent, rgba(255,204,0,0.06), transparent);
-    transform: rotate(-18deg);
+.stripe-overlay::after {
+right: 12%;
+background: linear-gradient(to bottom, transparent, rgba(255,204,0,0.06), transparent);
+transform: rotate(-18deg);
   }
-
-  /* Section Title with Stripe */
-  .section-title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    line-height: 1.05;
-    font-weight: 800;
-    letter-spacing: -1.5px;
+.section-title {
+font-size: clamp(2.5rem, 5vw, 3.5rem);
+line-height: 1.05;
+font-weight: 800;
+letter-spacing: -1.5px;
   }
-
-  /* Specs highlight */
-  .spec-number {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
-    line-height: 1;
-    color: var(--accent);
-    letter-spacing: 1px;
+.spec-number {
+font-family: 'Bebas Neue', sans-serif;
+font-size: 3.5rem;
+line-height: 1;
+color: var(--accent);
+letter-spacing: 1px;
   }
-
-  /* Smooth scroll */
-  html {
-    scroll-behavior: smooth;
+html {
+scroll-behavior: smooth;
   }
-
-  /* Glow accents */
-  .red-glow {
-    box-shadow: 0 0 40px rgba(225,6,0,0.15);
+.red-glow {
+box-shadow: 0 0 40px rgba(225,6,0,0.15);
   }
-
-  /* Nav carbon */
-  .nav-carbon {
-    background: rgba(5,5,5,0.92);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+.nav-carbon {
+background: rgba(5,5,5,0.92);
+backdrop-filter: blur(20px);
+border-bottom: 1px solid rgba(255,255,255,0.06);
   }
-  .nav-carbon::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
-    opacity: 0.6;
+.nav-carbon::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, var(--accent), var(--stripe), var(--accent), transparent);
+opacity: 0.6;
   }
 </style>
 </head>
@@ -260,563 +232,636 @@
 
 <!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50 nav-carbon">
-  <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between h-18 md:h-20">
-    <a href="#" class="flex items-center gap-3 group">
-      <img src="logo.jpg" alt="Majestic Auto FL" class="h-10 md:h-12 w-auto object-contain transition group-hover:scale-105">
-    </a>
-
-    <div class="hidden lg:flex items-center gap-x-10 text-sm font-medium tracking-wide">
-      <a href="#collection" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">COLLECTION</a>
-      <a href="#experience" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">EXPERIENCE</a>
-      <a href="#ai" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">AI MATCH</a>
-      <a href="#contact" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">CONTACT</a>
-    </div>
-
-    <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-            class="carbon-btn carbon-btn-primary px-6 py-2.5 text-xs rounded-sm">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between h-18 md:h-20">
+<a href="#" class="flex items-center gap-3 group">
+<img src="logo.jpg" alt="Majestic Auto FL" class="h-10 md:h-12 w-auto object-contain transition group-hover:scale-105">
+</a>
+<div class="hidden lg:flex items-center gap-x-10 text-sm font-medium tracking-wide">
+<a href="#collection" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">COLLECTION</a>
+<a href="#experience" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">EXPERIENCE</a>
+<a href="#ai" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">AI MATCH</a>
+<a href="#contact" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">CONTACT</a>
+</div>
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+class="carbon-btn carbon-btn-primary px-6 py-2.5 text-xs rounded-sm">
       PRIVATE VIEWING
-    </button>
-  </div>
+</button>
+</div>
 </nav>
 
 <!-- HERO -->
 <header class="relative h-[100dvh] min-h-[700px] flex items-end justify-center overflow-hidden">
-  <video id="hero-video"
-         class="absolute inset-0 w-full h-full object-cover"
-         autoplay muted loop playsinline
-         poster="assets/poster.jpg">
-    <source src="hero-optimized.mp4" type="video/mp4">
-  </video>
-
-  <!-- Cinematic overlays -->
-  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/15"></div>
-  <div class="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20"></div>
-
-  <!-- Performance Stripe Overlay -->
-  <div class="stripe-overlay"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-12 pb-16 md:pb-24 pt-28">
-    <div class="max-w-3xl">
-      <!-- Small label with dual stripe -->
-      <div class="inline-flex items-center gap-3 mb-6">
-        <div class="h-[2px] w-10 bg-[#E10600]"></div>
-        <span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">High-Performance Luxury</span>
-      </div>
-
-      <h1 class="racing-logo text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-2 leading-none">
+<video id="hero-video"
+class="absolute inset-0 w-full h-full object-cover"
+autoplay muted loop playsinline
+poster="assets/poster.jpg">
+<source src="hero-optimized.mp4" type="video/mp4">
+</video>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/15"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/35 via-transparent to-black/20"></div>
+<div class="stripe-overlay"></div>
+<div class="relative z-10 w-full max-w-screen-2xl mx-auto px-6 md:px-12 pb-16 md:pb-24 pt-28">
+<div class="max-w-3xl">
+<div class="inline-flex items-center gap-3 mb-6">
+<div class="h-[2px] w-10 bg-[#E10600]"></div>
+<span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">High-Performance Luxury</span>
+</div>
+<h1 class="racing-logo text-6xl sm:text-7xl md:text-8xl lg:text-9xl mb-2 leading-none">
         Buy Today
-      </h1>
-      <div class="flex items-baseline gap-4 mb-8">
-        <span class="heading text-3xl md:text-4xl text-white/90">Drive Today</span>
-        <div class="h-px flex-1 max-w-[120px] bg-gradient-to-r from-[#E10600] to-transparent"></div>
-      </div>
-
-      <p class="text-lg md:text-xl text-white/80 max-w-lg mb-10 leading-relaxed font-light">
-        Curated exotics. Forged for those who demand absolute performance and exclusivity.
-      </p>
-
-      <div class="flex flex-wrap gap-4">
-        <button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})"
-                class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm">
-          EXPLORE COLLECTION
-        </button>
-        <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-                class="carbon-btn px-10 py-4 text-sm rounded-sm border border-white/20">
+</h1>
+<div class="flex items-baseline gap-4 mb-8">
+<span class="heading text-3xl md:text-4xl text-white/90">Drive Today</span>
+<div class="h-px flex-1 max-w-[120px] bg-gradient-to-r from-[#E10600] to-transparent"></div>
+</div>
+<p class="text-lg md:text-xl text-white/80 max-w-lg mb-10 leading-relaxed font-light">
+        Quality pre-owned cars, SUVs, and trucks. Inspected, ready to go, with financing options for a wide range of credit.
+</p>
+<div class="flex flex-wrap gap-4">
+<button onclick="document.getElementById('collection').scrollIntoView({behavior:'smooth'})"
+class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm">
+                VIEW INVENTORY
+</button>
+<button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+class="carbon-btn px-10 py-4 text-sm rounded-sm border border-white/20">
           REQUEST PRIVATE ACCESS
-        </button>
-      </div>
-    </div>
-
-    <!-- Floating performance specs -->
-    <div class="hidden md:flex absolute bottom-16 right-12 gap-10">
-      <div class="text-right">
-        <div class="spec-number">710+</div>
-        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Horsepower</div>
-      </div>
-      <div class="text-right">
-        <div class="spec-number">2.8s</div>
-        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">0-60 MPH</div>
-      </div>
-      <div class="text-right">
-        <div class="spec-number">212</div>
-        <div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Top Speed</div>
-      </div>
-    </div>
-  </div>
+</button>
+</div>
+</div>
+<div class="hidden md:flex absolute bottom-16 right-12 gap-10">
+<div class="text-right">
+<div class="spec-number">710+</div>
+<div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Horsepower</div>
+</div>
+<div class="text-right">
+<div class="spec-number">2.8s</div>
+<div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">0-60 MPH</div>
+</div>
+<div class="text-right">
+<div class="spec-number">212</div>
+<div class="text-xs tracking-[2px] text-white/50 uppercase mt-1">Top Speed</div>
+</div>
+</div>
+</div>
 </header>
 
-<!-- CURATED COLLECTION -->
+<!-- CURATED COLLECTION (Featured Inventory) -->
 <section id="collection" class="relative py-24 md:py-32 overflow-hidden">
-  <!-- Subtle carbon side panels -->
-  <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#E10600] to-transparent opacity-40"></div>
-  <div class="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#FFCC00] to-transparent opacity-30"></div>
-
-  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-[2px] bg-[#E10600]"></div>
-          <span class="text-[#E10600] text-xs tracking-[4px] font-semibold uppercase">The Collection</span>
-        </div>
-        <h2 class="section-title heading">Featured Inventory</h2>
-        <p class="text-white/50 mt-3 max-w-md">Hand-selected high-performance machines. Each vehicle inspected, authenticated, and prepared to the highest standard.</p>
-      </div>
-      <a href="#" class="carbon-btn px-6 py-3 text-xs rounded-sm self-start md:self-auto">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#E10600] to-transparent opacity-40"></div>
+<div class="absolute right-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-[#FFCC00] to-transparent opacity-30"></div>
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-[#E10600]"></div>
+<span class="text-[#E10600] text-xs tracking-[4px] font-semibold uppercase">The Collection</span>
+</div>
+<h2 class="section-title heading">Featured Inventory</h2>
+<p class="text-white/50 mt-3 max-w-md">Hand-selected high-performance machines. Each vehicle inspected, authenticated, and prepared to the highest standard.</p>
+</div>
+<a href="#" class="carbon-btn px-6 py-3 text-xs rounded-sm self-start md:self-auto">
         VIEW FULL INVENTORY →
-      </a>
-    </div>
-
-    <!-- Horizontal Scroll Cards -->
-    <div class="horizontal-scroll flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-2 px-2">
-
-      <!-- Card 1 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/mclaren-black.jpg" alt="McLaren 720S Spider" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
-            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">Performance • 710 hp</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">McLaren 720S Spider</h3>
-              <div class="text-sm text-white/50 mt-1">Carbon Fiber Exterior • Track Pack</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$289,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('McLaren 720S Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/mclaren-white.jpg" alt="McLaren 750S" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
-            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">Track Pack • 740 hp</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">McLaren 750S Coupe</h3>
-              <div class="text-sm text-white/50 mt-1">Lightweight • Full Carbon</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$312,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('McLaren 750S Coupe')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/g-wagon.jpg" alt="Mercedes-AMG G 63" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
-            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">Mansory • Full Carbon</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">Mercedes-AMG G 63</h3>
-              <div class="text-sm text-white/50 mt-1">Mansory Edition • 850+ hp</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$265,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('Mercedes-AMG G 63')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/mclaren-detail.jpg" alt="McLaren Artura" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2025</span>
-            <span class="bg-[#FFCC00]/90 text-black text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">NEW ARRIVAL</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">Hybrid • 671 hp</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">McLaren Artura Spider</h3>
-              <div class="text-sm text-white/50 mt-1">Plug-in Hybrid • Carbon Tub</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$245,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('McLaren Artura Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/mclaren-black.jpg" alt="Ferrari 296 GTB" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
-            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">V6 Hybrid • 819 hp</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">Ferrari 296 GTB</h3>
-              <div class="text-sm text-white/50 mt-1">Assetto Fiorano Package</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$329,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('Ferrari 296 GTB')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="car-card rounded-sm snap-start group">
-        <div class="relative overflow-hidden">
-          <img src="assets/mclaren-white.jpg" alt="Lamborghini Huracán STO" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-          <div class="absolute top-4 left-4 flex gap-2">
-            <span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
-            <span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
-          </div>
-          <div class="absolute bottom-4 left-4 right-4">
-            <div class="text-xs text-white/60 tracking-wider uppercase">V10 • 631 hp</div>
-          </div>
-        </div>
-        <div class="p-6 carbon-fiber-strong">
-          <div class="flex justify-between items-start mb-5">
-            <div>
-              <h3 class="font-semibold text-xl tracking-tight">Lamborghini Huracán STO</h3>
-              <div class="text-sm text-white/50 mt-1">Super Trofeo Omologata</div>
-            </div>
-            <div class="text-right">
-              <div class="text-[#E10600] font-bold text-lg">$298,000</div>
-            </div>
-          </div>
-          <button onclick="showInquiryModal('Lamborghini Huracán STO')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">
-            INQUIRE NOW
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
+</a>
+</div>
+<div class="horizontal-scroll flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-2 px-2">
+<!-- Card 1 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/mclaren-black.jpg" alt="McLaren 720S Spider" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+<span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">Performance • 710 hp</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">McLaren 720S Spider</h3>
+<div class="text-sm text-white/50 mt-1">Carbon Fiber Exterior • Track Pack</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$289,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('McLaren 720S Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/mclaren-white.jpg" alt="McLaren 750S" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
+<span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">Track Pack • 740 hp</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">McLaren 750S Coupe</h3>
+<div class="text-sm text-white/50 mt-1">Lightweight • Full Carbon</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$312,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('McLaren 750S Coupe')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/g-wagon.jpg" alt="Mercedes-AMG G 63" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+<span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">Mansory • Full Carbon</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">Mercedes-AMG G 63</h3>
+<div class="text-sm text-white/50 mt-1">Mansory Edition • 850+ hp</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$265,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('Mercedes-AMG G 63')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/mclaren-detail.jpg" alt="McLaren Artura" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2025</span>
+<span class="bg-[#FFCC00]/90 text-black text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">NEW ARRIVAL</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">Hybrid • 671 hp</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">McLaren Artura Spider</h3>
+<div class="text-sm text-white/50 mt-1">Plug-in Hybrid • Carbon Tub</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$245,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('McLaren Artura Spider')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/mclaren-black.jpg" alt="Ferrari 296 GTB" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2023</span>
+<span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">V6 Hybrid • 819 hp</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">Ferrari 296 GTB</h3>
+<div class="text-sm text-white/50 mt-1">Assetto Fiorano Package</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$329,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('Ferrari 296 GTB')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="car-card rounded-sm snap-start group">
+<div class="relative overflow-hidden">
+<img src="assets/mclaren-white.jpg" alt="Lamborghini Huracán STO" class="w-full h-64 object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-black/80 border border-white/10 text-[10px] tracking-wider px-2.5 py-1 rounded-sm">2024</span>
+<span class="bg-[#E10600]/90 text-[10px] tracking-wider px-2.5 py-1 rounded-sm font-semibold">AVAILABLE</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<div class="text-xs text-white/60 tracking-wider uppercase">V10 • 631 hp</div>
+</div>
+</div>
+<div class="p-6 carbon-fiber-strong">
+<div class="flex justify-between items-start mb-5">
+<div>
+<h3 class="font-semibold text-xl tracking-tight">Lamborghini Huracán STO</h3>
+<div class="text-sm text-white/50 mt-1">Super Trofeo Omologata</div>
+</div>
+<div class="text-right">
+<div class="text-[#E10600] font-bold text-lg">$298,000</div>
+</div>
+</div>
+<button onclick="showInquiryModal('Lamborghini Huracán STO')" class="carbon-btn w-full py-3.5 text-xs rounded-sm">INQUIRE NOW</button>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- EXPERIENCE / PHILOSOPHY -->
-<section id="experience" class="relative py-28 border-t border-white/5">
-  <div class="absolute inset-0 carbon-fiber opacity-40"></div>
-  <div class="relative max-w-screen-2xl mx-auto px-6 md:px-12">
-    <div class="grid lg:grid-cols-2 gap-16 items-center">
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-8 h-[2px] bg-[#FFCC00]"></div>
-          <span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">The Majestic Standard</span>
-        </div>
-        <h2 class="section-title heading mb-8">Quality Cars. Real Options</h2>
-        <p class="text-white/70 text-lg leading-relaxed mb-8 max-w-lg">
-          We’re a full-service used car dealership in Longwood, Florida, serving Seminole County and surrounding cities. We carry inspected pre-owned cars, SUVs, trucks, and vans from trusted brands — with financing options for a wide range of credit situations.        </p>
-        <div class="grid grid-cols-2 gap-8">
-          <div>
-            <div class="spec-number text-4xl">30+</div>
-            <div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Years Expertise</div>
-          </div>
-          <div>
-            <div class="spec-number text-4xl">local</div>
-            <div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Florida dealership</div>
-          </div>
-        </div>
-      </div>
+<!-- SPOTLIGHT — Real McLaren 720S Photos (now below Featured Inventory) -->
+<section id="spotlight" class="relative py-24 md:py-32 overflow-hidden border-t border-white/5">
+<div class="absolute inset-0 bg-gradient-to-b from-black via-[#0a0a0a] to-black"></div>
+<div class="relative max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-8 h-[2px] bg-[#FFCC00]"></div>
+<span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">In The Spotlight</span>
+</div>
+<h2 class="section-title heading">McLaren 720S</h2>
+<p class="text-white/50 mt-3 max-w-md">Captured at a private Florida gathering. Dihedral doors open. Real presence.</p>
+</div>
+<button onclick="showInquiryModal('McLaren 720S')" class="carbon-btn carbon-btn-primary px-8 py-3.5 text-xs rounded-sm self-start md:self-auto">
+        INQUIRE ABOUT THIS CAR
+</button>
+</div>
+<div class="grid grid-cols-12 gap-4 md:gap-5">
+<div class="col-span-12 lg:col-span-8 relative group overflow-hidden rounded-sm">
+<img src="mclarenmain1.JPEG" alt="McLaren 720S dihedral doors" class="w-full h-[420px] md:h-[560px] object-cover transition duration-700 group-hover:scale-[1.03]">
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+<div>
+<div class="text-[#FFCC00] text-xs tracking-[3px] font-semibold mb-1">FEATURED</div>
+<div class="text-2xl md:text-3xl font-semibold tracking-tight">720S • Blue</div>
+</div>
+<div class="hidden sm:block text-right">
+<div class="text-xs text-white/50 tracking-wider">DIHEDRAL DOORS</div>
+<div class="text-sm font-medium">Open</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-4 md:gap-5">
+<div class="relative group overflow-hidden rounded-sm flex-1 min-h-[180px]">
+<img src="IMG_9112.JPG" alt="720S badge" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<div class="text-xs tracking-[2px] text-white/70">720S BADGE</div>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-sm flex-1 min-h-[180px]">
+<img src="interiormclaren.JPG" alt="McLaren 720S interior" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<div class="text-xs tracking-[2px] text-white/70">CARBON INTERIOR</div>
+</div>
+</div>
+</div>
+<div class="col-span-12 relative group overflow-hidden rounded-sm mt-1">
+<img src="IMG_9113.JPG" alt="McLaren 720S lifestyle" class="w-full h-[280px] md:h-[360px] object-cover transition duration-700 group-hover:scale-[1.02]">
+<div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 max-w-md">
+<div class="text-xs tracking-[3px] text-[#FFCC00] font-semibold mb-2">FLORIDA SCENE</div>
+<p class="text-white/80 text-sm md:text-base leading-relaxed">Real cars. Real moments. This is the energy we bring to every client experience.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-      <div class="space-y-6">
-        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
-          <div class="flex items-start gap-5">
-            <div class="w-12 h-12 flex items-center justify-center border border-[#E10600]/40 text-[#E10600]">
-              <i class="fa-solid fa-shield-halved text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Thoroughly Inspected</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Every vehicle is checked and prepared. Many are eligible for extended warranties and service contracts.</p>
-            </div>
-          </div>
-        </div>
-        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
-          <div class="flex items-start gap-5">
-            <div class="w-12 h-12 flex items-center justify-center border border-[#FFCC00]/40 text-[#FFCC00]">
-              <i class="fa-solid fa-key text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Financing That Works</h3>
-              <p class="text-white/50 text-sm leading-relaxed">We work with multiple lenders and offer options for all credit types, including subprime. Getting approved is often easier than people expect.</p>
-            </div>
-          </div>
-        </div>
-        <div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
-          <div class="flex items-start gap-5">
-            <div class="w-12 h-12 flex items-center justify-center border border-white/20 text-white/70">
-              <i class="fa-solid fa-gauge-high text-xl"></i>
-            </div>
-            <div>
-              <h3 class="font-semibold text-lg mb-2">Local & Straightforward</h3>
-              <p class="text-white/50 text-sm leading-relaxed">Based in Longwood and serving Winter Springs, Lake Mary, Altamonte Springs, Sanford, Oviedo, and the surrounding area.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!-- EXPERIENCE -->
+<section id="experience" class="relative py-28 border-t border-white/5">
+<div class="absolute inset-0 carbon-fiber opacity-40"></div>
+<div class="relative max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="flex items-center gap-3 mb-6">
+<div class="w-8 h-[2px] bg-[#FFCC00]"></div>
+<span class="text-[#FFCC00] text-xs tracking-[4px] font-semibold uppercase">The Majestic Standard</span>
+</div>
+<h2 class="section-title heading mb-8">Quality Cars. Real Options</h2>
+<p class="text-white/70 text-lg leading-relaxed mb-8 max-w-lg">
+          We’re a full-service used car dealership in Longwood, Florida, serving Seminole County and surrounding cities. We carry inspected pre-owned cars, SUVs, trucks, and vans from trusted brands — with financing options for a wide range of credit situations.
+</p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<div class="spec-number text-4xl">30+</div>
+<div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Years Expertise</div>
+</div>
+<div>
+<div class="spec-number text-4xl">local</div>
+<div class="text-xs tracking-[2px] text-white/40 uppercase mt-2">Florida dealership</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+<div class="flex items-start gap-5">
+<div class="w-12 h-12 flex items-center justify-center border border-[#E10600]/40 text-[#E10600]">
+<i class="fa-solid fa-shield-halved text-xl"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg mb-2">Thoroughly Inspected</h3>
+<p class="text-white/50 text-sm leading-relaxed">Every vehicle is checked and prepared. Many are eligible for extended warranties and service contracts.</p>
+</div>
+</div>
+</div>
+<div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+<div class="flex items-start gap-5">
+<div class="w-12 h-12 flex items-center justify-center border border-[#FFCC00]/40 text-[#FFCC00]">
+<i class="fa-solid fa-key text-xl"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg mb-2">Financing That Works</h3>
+<p class="text-white/50 text-sm leading-relaxed">We work with multiple lenders and offer options for all credit types, including subprime. Getting approved is often easier than people expect.</p>
+</div>
+</div>
+</div>
+<div class="carbon-fiber-strong border border-white/10 p-8 rounded-sm performance-stripe">
+<div class="flex items-start gap-5">
+<div class="w-12 h-12 flex items-center justify-center border border-white/20 text-white/70">
+<i class="fa-solid fa-gauge-high text-xl"></i>
+</div>
+<div>
+<h3 class="font-semibold text-lg mb-2">Local & Straightforward</h3>
+<p class="text-white/50 text-sm leading-relaxed">Based in Longwood and serving Winter Springs, Lake Mary, Altamonte Springs, Sanford, Oviedo, and the surrounding area.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
 <!-- AI MATCHING -->
 <section id="ai" class="relative py-28">
-  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-    <div class="relative carbon-fiber-strong border border-white/10 rounded-sm overflow-hidden">
-      <!-- Side accent stripe -->
-      <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
-
-      <div class="grid md:grid-cols-2 gap-0">
-        <div class="p-10 md:p-16 flex flex-col justify-center">
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-10 h-10 rounded-sm bg-[#E10600]/10 border border-[#E10600]/30 flex items-center justify-center">
-              <i class="fa-solid fa-microchip text-[#E10600]"></i>
-            </div>
-            <span class="text-[#E10600] text-xs tracking-[3px] font-semibold uppercase">Proprietary Technology</span>
-          </div>
-          <h2 class="section-title heading mb-6">AI Performance Matching</h2>
-          <p class="text-white/60 text-lg mb-10 max-w-md leading-relaxed">
-            Describe your ideal drive. Our AI instantly scans the collection and private network for the perfect machine based on power delivery, rarity, and lifestyle.
-          </p>
-          <button onclick="showAIMatchingModal()" class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm w-fit">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="relative carbon-fiber-strong border border-white/10 rounded-sm overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
+<div class="grid md:grid-cols-2 gap-0">
+<div class="p-10 md:p-16 flex flex-col justify-center">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-sm bg-[#E10600]/10 border border-[#E10600]/30 flex items-center justify-center">
+<i class="fa-solid fa-microchip text-[#E10600]"></i>
+</div>
+<span class="text-[#E10600] text-xs tracking-[3px] font-semibold uppercase">Smart Matching</span>
+</div>
+<h2 class="section-title heading mb-6">AI Performance Matching</h2>
+<p class="text-white/60 text-lg mb-10 max-w-md leading-relaxed">
+            Tell us your budget and what you’re looking for. We’ll match you with the best options from our inventory.
+</p>
+<button onclick="showAIMatchingModal()" class="carbon-btn carbon-btn-primary px-10 py-4 text-sm rounded-sm w-fit">
             START AI MATCHING
-          </button>
-        </div>
-
-        <div class="relative min-h-[320px] md:min-h-full bg-black/50 flex items-center justify-center p-10">
-          <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 30% 40%, #E10600 0%, transparent 50%), radial-gradient(circle at 70% 60%, #FFCC00 0%, transparent 40%);"></div>
-          <div class="relative text-center">
-            <div class="text-6xl md:text-8xl racing-font text-white/10 mb-4">AI</div>
-            <div class="text-sm tracking-[3px] text-white/40 uppercase">Precision Matching Engine</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</button>
+</div>
+<div class="relative min-h-[320px] md:min-h-full bg-black/50 flex items-center justify-center p-10">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 30% 40%, #E10600 0%, transparent 50%), radial-gradient(circle at 70% 60%, #FFCC00 0%, transparent 40%);"></div>
+<div class="relative text-center">
+<div class="text-6xl md:text-8xl racing-font text-white/10 mb-4">AI</div>
+<div class="text-sm tracking-[3px] text-white/40 uppercase">Precision Matching Engine</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- CONTACT / CTA -->
+<!-- CONTACT -->
 <section id="contact" class="relative py-28 border-t border-white/5">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <div class="flex justify-center mb-8">
-      <div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#E10600] to-transparent"></div>
-    </div>
-    <h2 class="section-title heading mb-6">Ready for Your Next Legend?</h2>
-    <p class="text-white/60 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="flex justify-center mb-8">
+<div class="w-16 h-[2px] bg-gradient-to-r from-transparent via-[#E10600] to-transparent"></div>
+</div>
+<h2 class="section-title heading mb-6">Ready for Your Next Legend?</h2>
+<p class="text-white/60 text-lg mb-12 max-w-xl mx-auto leading-relaxed">
       Whether you seek a specific hypercar or wish to explore exclusive private opportunities, our team provides white-glove, confidential service.
-    </p>
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-      <button onclick="showInquiryModal()" class="carbon-btn carbon-btn-primary px-12 py-5 text-sm rounded-sm">
+</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+<button onclick="showInquiryModal()" class="carbon-btn carbon-btn-primary px-12 py-5 text-sm rounded-sm">
         START PRIVATE CONVERSATION
-      </button>
-      <a href="tel:+14076661111" class="carbon-btn px-10 py-5 text-sm rounded-sm flex items-center gap-3">
-        <i class="fa-solid fa-phone text-[#E10600]"></i>
+</button>
+<a href="tel:+14076661111" class="carbon-btn px-10 py-5 text-sm rounded-sm flex items-center gap-3">
+<i class="fa-solid fa-phone text-[#E10600]"></i>
         SPEAK WITH A SPECIALIST
-      </a>
-    </div>
-  </div>
+</a>
+</div>
+</div>
 </section>
 
 <!-- FOOTER -->
 <footer class="relative border-t border-white/5 pt-16 pb-10">
-  <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E10600]/50 to-transparent"></div>
-  <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-    <div class="grid md:grid-cols-4 gap-12 mb-16">
-      <div class="md:col-span-1">
-        <div class="heading text-2xl mb-3">MAJESTIC</div>
-        <div class="text-[10px] tracking-[3px] text-[#E10600] font-semibold mb-6">AUTO FL · PERFORMANCE</div>
-        <p class="text-white/40 text-sm leading-relaxed">Florida’s premier destination for high-performance and exotic automobiles.</p>
-      </div>
-      <div>
-        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Inventory</div>
-        <div class="space-y-3 text-sm">
-          <a href="#" class="block hover:text-[#E10600] transition">New Arrivals</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Pre-Owned Exotics</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Just Sold</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Coming Soon</a>
-        </div>
-      </div>
-      <div>
-        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Services</div>
-        <div class="space-y-3 text-sm">
-          <a href="#" class="block hover:text-[#E10600] transition">Private Sales</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Consignment</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Finance &amp; Insurance</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Performance Service</a>
-        </div>
-      </div>
-      <div>
-        <div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Connect</div>
-        <div class="space-y-3 text-sm">
-          <a href="#" class="block hover:text-[#E10600] transition">Instagram</a>
-          <a href="#" class="block hover:text-[#E10600] transition">YouTube</a>
-          <a href="#" class="block hover:text-[#E10600] transition">About Us</a>
-          <a href="#" class="block hover:text-[#E10600] transition">Careers</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-8 border-t border-white/5 text-sm text-white/40">
-      <div>© 2026 Majestic Auto FL. All rights reserved. Performance forged in Florida.</div>
-      <div class="flex gap-8">
-        <a href="#" class="hover:text-white transition">Privacy</a>
-        <a href="#" class="hover:text-white transition">Terms</a>
-        <a href="#" class="hover:text-white transition">Accessibility</a>
-      </div>
-    </div>
-  </div>
+<div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#E10600]/50 to-transparent"></div>
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="grid md:grid-cols-4 gap-12 mb-16">
+<div class="md:col-span-1">
+<div class="heading text-2xl mb-3">MAJESTIC</div>
+<div class="text-[10px] tracking-[3px] text-[#E10600] font-semibold mb-6">AUTO FL · PERFORMANCE</div>
+<p class="text-white/40 text-sm leading-relaxed">Florida’s premier destination for high-performance and exotic automobiles.</p>
+</div>
+<div>
+<div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Inventory</div>
+<div class="space-y-3 text-sm">
+<a href="#" class="block hover:text-[#E10600] transition">New Arrivals</a>
+<a href="#" class="block hover:text-[#E10600] transition">Pre-Owned Exotics</a>
+<a href="#" class="block hover:text-[#E10600] transition">Just Sold</a>
+<a href="#" class="block hover:text-[#E10600] transition">Coming Soon</a>
+</div>
+</div>
+<div>
+<div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Services</div>
+<div class="space-y-3 text-sm">
+<a href="#" class="block hover:text-[#E10600] transition">Private Sales</a>
+<a href="#" class="block hover:text-[#E10600] transition">Consignment</a>
+<a href="#" class="block hover:text-[#E10600] transition">Finance &amp; Insurance</a>
+<a href="#" class="block hover:text-[#E10600] transition">Performance Service</a>
+</div>
+</div>
+<div>
+<div class="text-xs tracking-[3px] text-white/40 uppercase mb-5">Connect</div>
+<div class="space-y-3 text-sm">
+<a href="#" class="block hover:text-[#E10600] transition">Instagram</a>
+<a href="#" class="block hover:text-[#E10600] transition">YouTube</a>
+<a href="#" class="block hover:text-[#E10600] transition">About Us</a>
+<a href="#" class="block hover:text-[#E10600] transition">Careers</a>
+</div>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-8 border-t border-white/5 text-sm text-white/40">
+<div>© 2026 Majestic Auto FL. All rights reserved. Performance forged in Florida.</div>
+<div class="flex gap-8">
+<a href="#" class="hover:text-white transition">Privacy</a>
+<a href="#" class="hover:text-white transition">Terms</a>
+<a href="#" class="hover:text-white transition">Accessibility</a>
+</div>
+</div>
+</div>
 </footer>
 
 <!-- AI MATCHING MODAL -->
 <div id="ai-modal" onclick="if(event.target.id==='ai-modal') hideAIMatchingModal()"
-     class="hidden fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-4 md:p-6">
-  <div onclick="event.stopPropagation()" class="carbon-fiber-strong border border-white/10 rounded-sm w-full max-w-2xl overflow-hidden">
-    <div class="h-1 bg-gradient-to-r from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
-    <div class="p-8 md:p-10">
-      <div class="flex justify-between items-start mb-8">
-        <div>
-          <h3 class="text-2xl font-semibold tracking-tight">AI Performance Matching</h3>
-          <p class="text-white/50 text-sm mt-1">Tell us what you demand from your next machine</p>
-        </div>
-        <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
-      </div>
-
-      <form onsubmit="runAIMatching(event)">
-        <div class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <div>
-              <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Budget Range</label>
-              <select class="w-full bg-black/60 border border-white/15 rounded-sm px-4 py-3.5 text-sm focus:border-[#E10600] outline-none transition">
-                <option>Under $200,000</option>
-                <option selected>$200,000 – $300,000</option>
-                <option>$300,000 – $500,000</option>
-                <option>$500,000 – $1M</option>
-                <option>Over $1,000,000</option>
-              </select>
-            </div>
-            <div>
-              <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Preferred Style</label>
-              <select class="w-full bg-black/60 border border-white/15 rounded-sm px-4 py-3.5 text-sm focus:border-[#E10600] outline-none transition">
-                <option>Hypercar / Supercar</option>
-                <option>Track Weapon</option>
-                <option>Luxury Performance SUV</option>
-                <option>Open-Top Grand Tourer</option>
-                <option>Daily Supercar</option>
-              </select>
-            </div>
-          </div>
-          <div>
-            <label class="text-xs tracking-[2px] text-white/50 uppercase block mb-2">Key Priorities</label>
-            <div class="flex flex-wrap gap-2">
-              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Max Power</label>
-              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Rarity</label>
-              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Carbon Fiber</label>
-              <label class="carbon-btn px-4 py-2 text-xs rounded-sm cursor-pointer"><input type="checkbox" class="mr-2 accent-[#E10600]">Sound</label>
-            </div>
-          </div>
-          <button type="submit" class="carbon-btn carbon-btn-primary w-full py-4 text-sm rounded-sm mt-4">
-            FIND MY PERFECT MACHINE
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+class="hidden fixed inset-0 bg-black/95 z-[200] flex items-center justify-center p-4 md:p-6">
+<div onclick="event.stopPropagation()" class="carbon-fiber-strong border border-white/10 rounded-sm w-full max-w-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+<div class="h-1 bg-gradient-to-r from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
+<div class="p-8 md:p-10" id="ai-step-container"></div>
+</div>
 </div>
 
 <script>
-  window.onload = function() {
-    const hero = document.getElementById('hero-video');
-    if (hero) {
-      hero.play().catch(() => {});
-    }
+const inventory = [
+    { id: '720s', name: 'McLaren 720S', year: '2019–2023', type: 'supercar', budget: 'high', tags: ['power','rarity','carbon','sound'], price: 'From $239,000', match: 98, img: 'mclarenmain1.JPEG', blurb: 'Dihedral doors. 710+ hp. Pure presence.' },
+    { id: 'g63', name: 'Mercedes-AMG G 63', year: '2020–2024', type: 'suv', budget: 'high', tags: ['power','luxury','daily'], price: 'From $165,000', match: 91, img: 'assets/g-wagon.jpg', blurb: 'Iconic stance. Serious power. Daily usable.' },
+    { id: 'mustang', name: 'Ford Mustang GT', year: '2018–2024', type: 'performance', budget: 'mid', tags: ['sound','power','daily'], price: 'From $28,000', match: 87, img: 'assets/mclaren-black.jpg', blurb: 'American muscle. Reliable performance. Strong value.' },
+    { id: 'camry', name: 'Toyota Camry / RAV4', year: '2019–2024', type: 'daily', budget: 'low', tags: ['daily','reliable'], price: 'From $18,500', match: 84, img: 'assets/mclaren-white.jpg', blurb: 'Clean history. Inspected. Financing friendly.' },
+    { id: 'f150', name: 'Ford F-150', year: '2018–2024', type: 'truck', budget: 'mid', tags: ['daily','power'], price: 'From $32,000', match: 89, img: 'assets/g-wagon.jpg', blurb: 'Work-ready. Capable. High demand in Florida.' }
+  ];
+let aiState = { budget: null, style: null, priorities: [] };
+window.onload = function() {
+const hero = document.getElementById('hero-video');
+if (hero) hero.play().catch(() => {});
   };
-
-  function showAIMatchingModal() {
-    document.getElementById('ai-modal').classList.remove('hidden');
-    document.getElementById('ai-modal').classList.add('flex');
-    document.body.style.overflow = 'hidden';
+function showAIMatchingModal() {
+aiState = { budget: null, style: null, priorities: [] };
+renderAIStep(1);
+document.getElementById('ai-modal').classList.remove('hidden');
+document.getElementById('ai-modal').classList.add('flex');
+document.body.style.overflow = 'hidden';
   }
-
-  function hideAIMatchingModal() {
-    document.getElementById('ai-modal').classList.add('hidden');
-    document.getElementById('ai-modal').classList.remove('flex');
-    document.body.style.overflow = '';
+function hideAIMatchingModal() {
+document.getElementById('ai-modal').classList.add('hidden');
+document.getElementById('ai-modal').classList.remove('flex');
+document.body.style.overflow = '';
   }
-
-  function runAIMatching(e) {
-    e.preventDefault();
-    const modal = document.getElementById('ai-modal');
-    modal.innerHTML = `
-      <div class="carbon-fiber-strong border border-white/10 rounded-sm w-full max-w-2xl overflow-hidden">
-        <div class="h-1 bg-gradient-to-r from-[#E10600] via-[#FFCC00] to-[#E10600]"></div>
-        <div class="p-12 text-center">
-          <div class="text-[#E10600] text-5xl mb-6"><i class="fa-solid fa-check-circle"></i></div>
-          <h3 class="text-2xl font-semibold mb-3">Matches Found</h3>
-          <p class="text-white/60 mb-8 max-w-sm mx-auto">Our AI has identified three exceptional machines that align with your criteria. A specialist will contact you within the hour with private details.</p>
-          <button onclick="location.reload()" class="carbon-btn carbon-btn-primary px-10 py-3.5 text-sm rounded-sm">
-            CLOSE
-          </button>
+function renderAIStep(step) {
+const c = document.getElementById('ai-step-container');
+if (step === 1) {
+c.innerHTML = `
+        <div class="flex justify-between items-start mb-8">
+          <div>
+            <div class="text-xs tracking-[3px] text-[#E10600] font-semibold mb-2">STEP 1 OF 3</div>
+            <h3 class="text-2xl font-semibold tracking-tight">What’s your budget?</h3>
+            <p class="text-white/50 text-sm mt-1">We’ll only show realistic matches</p>
+          </div>
+          <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
         </div>
-      </div>
-    `;
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button onclick="selectBudget('low')" class="carbon-btn text-left px-5 py-4 rounded-sm"><div class="font-semibold">Under $40,000</div><div class="text-xs text-white/50 mt-1">Daily drivers & solid value</div></button>
+          <button onclick="selectBudget('mid')" class="carbon-btn text-left px-5 py-4 rounded-sm"><div class="font-semibold">$40,000 – $100,000</div><div class="text-xs text-white/50 mt-1">Performance & luxury options</div></button>
+          <button onclick="selectBudget('high')" class="carbon-btn text-left px-5 py-4 rounded-sm"><div class="font-semibold">$100,000 – $300,000</div><div class="text-xs text-white/50 mt-1">High-performance machines</div></button>
+          <button onclick="selectBudget('ultra')" class="carbon-btn text-left px-5 py-4 rounded-sm"><div class="font-semibold">$300,000+</div><div class="text-xs text-white/50 mt-1">Top-tier / exotic</div></button>
+        </div>`;
+    }
+if (step === 2) {
+c.innerHTML = `
+        <div class="flex justify-between items-start mb-8">
+          <div>
+            <div class="text-xs tracking-[3px] text-[#E10600] font-semibold mb-2">STEP 2 OF 3</div>
+            <h3 class="text-2xl font-semibold tracking-tight">What are you looking for?</h3>
+          </div>
+          <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <button onclick="selectStyle('daily')" class="carbon-btn text-left px-5 py-4 rounded-sm">Daily Driver / Reliable</button>
+          <button onclick="selectStyle('performance')" class="carbon-btn text-left px-5 py-4 rounded-sm">Performance / Fun</button>
+          <button onclick="selectStyle('suv')" class="carbon-btn text-left px-5 py-4 rounded-sm">SUV / Truck</button>
+          <button onclick="selectStyle('supercar')" class="carbon-btn text-left px-5 py-4 rounded-sm">Supercar / Exotic</button>
+        </div>
+        <button onclick="renderAIStep(1)" class="mt-6 text-sm text-white/40 hover:text-white">← Back</button>`;
+    }
+if (step === 3) {
+c.innerHTML = `
+        <div class="flex justify-between items-start mb-8">
+          <div>
+            <div class="text-xs tracking-[3px] text-[#E10600] font-semibold mb-2">STEP 3 OF 3</div>
+            <h3 class="text-2xl font-semibold tracking-tight">What matters most?</h3>
+            <p class="text-white/50 text-sm mt-1">Select all that apply</p>
+          </div>
+          <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
+        </div>
+        <div class="flex flex-wrap gap-3 mb-8">
+          <button onclick="togglePriority(this,'power')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Power</button>
+          <button onclick="togglePriority(this,'sound')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Sound</button>
+          <button onclick="togglePriority(this,'carbon')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Carbon / Style</button>
+          <button onclick="togglePriority(this,'daily')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Daily Usable</button>
+          <button onclick="togglePriority(this,'rarity')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Rarity</button>
+          <button onclick="togglePriority(this,'reliable')" class="carbon-btn px-5 py-3 text-sm rounded-sm">Reliability</button>
+        </div>
+        <button onclick="runSmartMatch()" class="carbon-btn carbon-btn-primary w-full py-4 text-sm rounded-sm">SHOW MY MATCHES</button>
+        <button onclick="renderAIStep(2)" class="mt-4 text-sm text-white/40 hover:text-white block">← Back</button>`;
+    }
   }
-
-  function showInquiryModal(car = '') {
-    const message = car ? `Private inquiry initiated for: ${car}. A specialist will reach out shortly.` : 'Private conversation started. Our team will contact you immediately.';
-    alert(message);
+function selectBudget(v) { aiState.budget = v; renderAIStep(2); }
+function selectStyle(v) { aiState.style = v; renderAIStep(3); }
+function togglePriority(btn, v) {
+if (aiState.priorities.includes(v)) {
+aiState.priorities = aiState.priorities.filter(p => p !== v);
+btn.classList.remove('border-[#E10600]','text-[#E10600]');
+    } else {
+aiState.priorities.push(v);
+btn.classList.add('border-[#E10600]','text-[#E10600]');
+    }
+  }
+function runSmartMatch() {
+const c = document.getElementById('ai-step-container');
+c.innerHTML = `<div class="py-16 text-center"><div class="inline-block w-12 h-12 border-2 border-[#E10600] border-t-transparent rounded-full animate-spin mb-6"></div><h3 class="text-xl font-semibold mb-2">Scanning inventory...</h3><p class="text-white/50 text-sm">Matching your preferences</p></div>`;
+setTimeout(() => {
+let scored = inventory.map(car => {
+let score = car.match;
+if (aiState.budget === 'low' && car.budget === 'low') score += 15;
+if (aiState.budget === 'mid' && (car.budget === 'mid' || car.budget === 'low')) score += 10;
+if (aiState.budget === 'high' && (car.budget === 'high' || car.budget === 'mid')) score += 12;
+if (aiState.budget === 'ultra' && car.budget === 'high') score += 15;
+if (aiState.style === car.type) score += 20;
+if (aiState.style === 'supercar' && car.id === '720s') score += 25;
+aiState.priorities.forEach(p => { if (car.tags.includes(p)) score += 8; });
+return { ...car, finalScore: Math.min(score, 99) };
+      });
+scored.sort((a,b) => b.finalScore - a.finalScore);
+const top = scored.slice(0,3);
+c.innerHTML = `
+        <div class="flex justify-between items-start mb-6">
+          <div><div class="text-xs tracking-[3px] text-[#E10600] font-semibold mb-2">MATCHES FOUND</div><h3 class="text-2xl font-semibold tracking-tight">Your best fits</h3></div>
+          <button onclick="hideAIMatchingModal()" class="text-3xl text-white/40 hover:text-white leading-none">&times;</button>
+        </div>
+        <div class="space-y-4">
+${top.map(car => `
+            <div class="flex gap-4 p-4 bg-black/40 border border-white/10 rounded-sm">
+              <img src="${car.img}" class="w-24 h-24 object-cover rounded-sm flex-shrink-0" alt="${car.name}">
+              <div class="flex-1 min-w-0">
+                <div class="flex items-start justify-between gap-2">
+                  <div><div class="font-semibold text-lg leading-tight">${car.name}</div><div class="text-xs text-white/50 mt-0.5">${car.year}</div></div>
+                  <div class="text-[#E10600] font-bold text-sm">${car.finalScore}% match</div>
+                </div>
+                <p class="text-sm text-white/60 mt-2">${car.blurb}</p>
+                <div class="flex items-center justify-between mt-3">
+                  <div class="text-sm font-medium">${car.price}</div>
+                  <button onclick="showInquiryModal('${car.name}')" class="text-xs tracking-wider border border-white/20 px-3 py-1.5 rounded-sm hover:bg-[#E10600] hover:border-[#E10600] transition">INQUIRE</button>
+                </div>
+              </div>
+            </div>`).join('')}
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-white/40 text-sm mb-4">Need help with financing?</p>
+          <button onclick="showInquiryModal()" class="carbon-btn carbon-btn-primary px-8 py-3.5 text-sm rounded-sm">TALK TO A SPECIALIST</button>
+        </div>`;
+    }, 1600);
+  }
+function showInquiryModal(car = '') {
+const message = car ? `Private inquiry initiated for: ${car}. A specialist will reach out shortly.` : 'Private conversation started. Our team will contact you immediately.';
+alert(message);
   }
 </script>
 </body>
