@@ -234,8 +234,7 @@ opacity: 0.6;
 <nav class="fixed top-0 left-0 right-0 z-50 nav-carbon">
 <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex items-center justify-between h-18 md:h-20">
 <a href="#" class="flex items-center gap-3 group">
-<img src="logo.jpg" alt="Majestic Auto FL" class="h-10 md:h-12 w-auto object-contain transition group-hover:scale-105">
-</a>
+  <video id="logo-video" src="assets/logo-flame.mp4" autoplay muted loop playsinline class="h-10 md:h-14 w-auto object-contain transition group-hover:scale-105"></video></a>
 <div class="hidden lg:flex items-center gap-x-10 text-sm font-medium tracking-wide">
 <a href="#collection" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">COLLECTION</a>
 <a href="#experience" class="hover:text-[#E10600] transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#E10600] hover:after:w-full after:transition-all">EXPERIENCE</a>
@@ -730,9 +729,14 @@ const inventory = [
   ];
 let aiState = { budget: null, style: null, priorities: [] };
 window.onload = function() {
-const hero = document.getElementById('hero-video');
-if (hero) hero.play().catch(() => {});
-  };
+  const hero = document.getElementById('hero-video');
+  if (hero) hero.play().catch(() => {});
+  const logo = document.getElementById('logo-video');
+  if (logo) {
+    logo.muted = true;
+    logo.play().catch(() => {});
+  }
+};
 function showAIMatchingModal() {
 aiState = { budget: null, style: null, priorities: [] };
 renderAIStep(1);
