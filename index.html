@@ -728,15 +728,31 @@ const inventory = [
     { id: 'f150', name: 'Ford F-150', year: '2018–2024', type: 'truck', budget: 'mid', tags: ['daily','power'], price: 'From $32,000', match: 89, img: 'assets/g-wagon.jpg', blurb: 'Work-ready. Capable. High demand in Florida.' }
   ];
 let aiState = { budget: null, style: null, priorities: [] };
+function forceLogoPlay() {
+  const logo = document.getElementById('logo-video');
+  if (!logo) return;
+  logo.muted = true;
+  logo.setAttribute('muted', '');
+  logo.playsInline = true;
+  const p = logo.play();
+  if (p && p.catch) p.catch(() => {});
+}
+
 window.onload = function() {
   const hero = document.getElementById('hero-video');
   if (hero) hero.play().catch(() => {});
+  forceLogoPlay();
+};
+
+// Extra mobile unlock — plays as soon as the video data is ready
+document.addEventListener('DOMContentLoaded', function() {
   const logo = document.getElementById('logo-video');
   if (logo) {
-    logo.muted = true;
-    logo.play().catch(() => {});
+    logo.addEventListener('loadeddata', forceLogoPlay);
+    logo.addEventListener('canplay', forceLogoPlay);
   }
-};
+  forceLogoPlay();
+});
 function showAIMatchingModal() {
 aiState = { budget: null, style: null, priorities: [] };
 renderAIStep(1);
